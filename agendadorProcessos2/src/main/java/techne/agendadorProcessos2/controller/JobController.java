@@ -68,7 +68,16 @@ public class JobController {
         }
     }
 
-   
+    //rodar job manualmente via Quartz
+    @PostMapping("/{id}/trigger")
+    public ResponseEntity<String> rodarJobAgora(@PathVariable Long id) {
+        try {
+            schedulerService.rodarJobAgora(id);
+            return ResponseEntity.ok("Job " + id + " disparado manualmente com sucesso!");
+        } catch (SchedulerException e) {
+            return ResponseEntity.internalServerError().body("Erro ao rodar job: " + e.getMessage());
+        }
+    }
 
     //executar manualmente sem Quartz (processa arquivos direto)
     @PostMapping("/{id}/run-now")
