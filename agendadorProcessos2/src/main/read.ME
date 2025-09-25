@@ -1,0 +1,88 @@
+AGENDADOR DE PROCESSOS BANCÁRIOS
+=================================
+
+Descrição
+---------
+Este projeto implementa um sistema de agendamento e processamento de arquivos de retorno bancário.
+O backend é desenvolvido em Java com Spring Boot e Quartz Scheduler. O frontend é construído em Angular
+com integração ao backend por meio de uma API REST.
+
+Funcionalidades
+---------------
+- Cadastro, edição e exclusão de jobs agendados.
+- Suporte a expressões CRON para agendamento de execuções.
+- Processamento automático de arquivos em diretórios monitorados.
+- Registro de execuções com horário de início, fim, status e mensagens.
+- Associação de arquivos processados a cada execução.
+- Frontend para gerenciamento e visualização dos jobs e execuções.
+
+Arquitetura
+-----------
+Backend:
+- Spring Boot
+- Quartz Scheduler
+- Spring Data JPA / Hibernate
+- Banco de dados relacional (SQL Server, PostgreSQL ou MySQL)
+
+Frontend:
+- Angular
+- Bootstrap 5
+- Bootstrap Icons
+
+Estrutura de Diretórios
+-----------------------
+Backend (agendadorProcessos2):
+- controller   -> Endpoints REST
+- model        -> Entidades JPA (Job, JobExecucao, ArquivoRetorno)
+- repository   -> Repositórios Spring Data
+- scheduler    -> Definições dos jobs Quartz
+- service      -> Lógica de negócio e processamento de arquivos
+
+Frontend (agendador-frontend):
+- components/jobs
+    - jobs-list        -> Listagem de jobs
+    - jobs-form        -> Criação e edição de jobs
+    - jobs-details     -> Visualização de execuções e arquivos
+- services/jobs.service.ts -> Serviço de integração com a API
+
+Requisitos
+----------
+Backend:
+- Java 17+
+- Maven
+- Banco de dados configurado
+
+Frontend:
+- Node.js 18+
+- Angular CLI 17+
+- Bootstrap 5 + Bootstrap Icons
+
+Execução
+--------
+Backend:
+- Na raiz do backend:
+  mvn spring-boot:run
+- API disponível em:
+  http://localhost:8080/api/jobs
+
+Frontend:
+- Na raiz do frontend:
+  npm install
+  ng serve
+- Aplicação disponível em:
+  http://localhost:4200
+
+Fluxo de Processamento de Arquivos
+----------------------------------
+1. O usuário adiciona arquivos de retorno bancário na pasta "pendentes".
+2. Durante a execução do job:
+   - Arquivos são lidos e processados.
+   - Em caso de sucesso, são movidos para a pasta "processados".
+   - Em caso de falha, são movidos para a pasta "erros".
+3. Todas as execuções são registradas no banco de dados com status e mensagens.
+
+
+
+Autor
+-----
+Desenvolvido por Gabriel Segatto.
