@@ -1,0 +1,40 @@
+<div class="container">
+  <br>
+  <h2> Detalhes do Job {{ jobId }}</h2>
+  <br>
+  <h4>Execuções</h4>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Status</th>
+        <th>Mensagem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exec of execucoes">
+        <td>{{ exec.inicio || '-' }}</td>
+        <td>{{ exec.fim || '-' }}</td>
+        <td>{{ exec.status }}</td>
+        <td>{{ exec.mensagem }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4> Arquivos</h4>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arq of arquivos">
+        <td>{{ arq.nomeArquivo }}</td>
+        <td>{{ arq.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

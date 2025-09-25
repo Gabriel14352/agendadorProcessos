@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>{{ isEdit ? 'Editar Agendamento' : 'Novo Agendamento' }}</h2>
+
+  <form (ngSubmit)="salvar()" #jobForm="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input class="form-control" [(ngModel)]="job.nome" name="nome" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Expressão CRON</label>
+      <app-cron-picker (cronChange)="job.cronExpression = $event"></app-cron-picker>
+      <small class="form-text text-muted">
+        Quartz (6 campos): <code>seg min hora dia-mês mês dia-semana</code>. Ex.: <code>0 30 5 * * ?</code>
+      </small>
+      <div class="mt-2">
+        <strong>Atual:</strong> <code>{{ job.cronExpression || '(preencha acima)' }}</code>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success me-2">
+      {{ isEdit ? 'Salvar Alterações' : 'Criar Agendamento' }}
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

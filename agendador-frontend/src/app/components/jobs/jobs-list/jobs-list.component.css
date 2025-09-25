@@ -1,0 +1,109 @@
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #164773;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: #164773;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0d2c49;
+}
+
+.btn-secondary {
+  background: #465779;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #2f3c55;
+}
+
+.btn-info {
+  background: #0d6efd;
+  color: white;
+}
+
+.btn-info:hover {
+  background: #084298;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #a71d2a;
+}
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.jobs-table th,
+.jobs-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.jobs-table th {
+  background: #f4f6f9;
+  font-weight: 600;
+}
+
+.jobs-table tr:hover {
+  background: #f1f3f5;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge.AGENDADO {
+  background: #198754;
+  color: white;
+}
+
+.badge.PROCESSANDO {
+  background: #ffc107;
+  color: black;
+}
+
+.badge.FALHA {
+  background: #dc3545;
+  color: white;
+}
+
+.badge.SUCESSO {
+  background: #0d6efd;
+  color: white;
+}

@@ -1,0 +1,37 @@
+<div class="cron-picker row g-2 align-items-end">
+  <div class="col-4 col-md-2">
+    <label class="form-label">Segundos</label>
+    <input type="number" class="form-control" [(ngModel)]="seconds" (input)="updateCron()" min="0" max="59" />
+  </div>
+
+  <div class="col-4 col-md-2">
+    <label class="form-label">Minutos</label>
+    <input type="number" class="form-control" [(ngModel)]="minutes" (input)="updateCron()" min="0" max="59" />
+  </div>
+
+  <div class="col-4 col-md-2">
+    <label class="form-label">Horas</label>
+    <input type="number" class="form-control" [(ngModel)]="hours" (input)="updateCron()" min="0" max="23" />
+  </div>
+
+  <div class="col-6 col-md-2">
+    <label class="form-label">Dia do mês</label>
+    <input type="text" class="form-control" [(ngModel)]="dayOfMonth" (input)="updateCron()" placeholder="* ou número" />
+  </div>
+
+  <div class="col-6 col-md-2">
+    <label class="form-label">Mês</label>
+    <input type="text" class="form-control" [(ngModel)]="month" (input)="updateCron()" placeholder="*" />
+  </div>
+
+  <div class="col-12 col-md-2">
+    <label class="form-label">Dia da semana</label>
+    <input type="text" class="form-control" [(ngModel)]="dayOfWeek" (input)="updateCron()" placeholder="? ou 1-7" />
+  </div>
+
+  <div class="col-12 mt-2">
+    <small class="text-muted">
+      Expressão (Quartz 6 campos): <code>{{ cronExpression }}</code>
+    </small>
+  </div>
+</div>
